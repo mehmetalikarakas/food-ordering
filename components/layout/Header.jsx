@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Logo from "./ui/Logo";
+import Logo from "../ui/Logo";
 import { FaUserAlt, FaSearch } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
+import Search from "../ui/Search";
 
 const Header = () => {
-  const [search, setSearch] = useState(true);
+  const [search, setSearch] = useState(false);
 
   return (
     <div className="h-[5.5rem] bg-secondary ">
@@ -45,7 +46,7 @@ const Header = () => {
           <a href="#">
             <HiShoppingCart className="hover:text-primary transition-all" />
           </a>
-          <button onClick={() => setSearch(false)}>
+          <button onClick={() => setSearch(true)}>
             <FaSearch className="hover:text-primary transition-all" />
           </button>
           <a href="#">
@@ -53,7 +54,7 @@ const Header = () => {
           </a>
         </div>
       </div>
-      {search && <div className="text-9xl">Modal</div>}
+      {search && <Search setSearch={setSearch} />}
     </div>
   );
 };
