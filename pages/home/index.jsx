@@ -1,7 +1,12 @@
 import React from "react";
+import Carousel from "../../components/ui/Carousel";
 
-const index = () => {
-  return <div className="font-dancing text-center text-3xl">Home Pages</div>;
+const Home = () => {
+  return (
+    <div className="relative">
+      <Carousel />
+    </div>
+  );
 };
 
-export default index;
+export default Home;
